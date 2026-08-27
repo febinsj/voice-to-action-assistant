@@ -14,7 +14,8 @@ from dotenv import load_dotenv
 
 # Finds the .env file and loads its contents into the environment,
 # so os.environ can see them.
-load_dotenv()
+load_dotenv(override=True)
+
 
 class Settings:
     """
@@ -24,5 +25,6 @@ class Settings:
     """
 
     anthropic_api_key: str = os.environ.get("ANTHROPIC_API_KEY", "")
+
 
 settings = Settings()
